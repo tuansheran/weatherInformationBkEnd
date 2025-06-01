@@ -1,8 +1,10 @@
 import express from 'express';
 import { getWeatherData } from './weatherService';
-
+import cors from 'cors';
 const app = express();
 const PORT = 3000;
+
+app.use(cors());
 
 app.get('/weather', async (_req, res) => {
   try {
